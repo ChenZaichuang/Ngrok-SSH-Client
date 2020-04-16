@@ -1,0 +1,6 @@
+[submodule "dns_resolver"]
+	path = dns_resolver
+	url = git@github.com:ChenZaichuang/DNS-Resolver.git
+[submodule "python_utils"]
+	path = python_utils
+	url = git@github.com:ChenZaichuang/Python-Utils.git
