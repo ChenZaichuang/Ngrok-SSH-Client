@@ -6,6 +6,7 @@ from datetime import datetime
 import gevent
 import paramiko
 
+
 def _get_latency_of_ssh_tunnel(ip, port, print_error=False):
     try:
         with gevent.Timeout(10):
@@ -16,6 +17,7 @@ def _get_latency_of_ssh_tunnel(ip, port, print_error=False):
         if print_error:
             print(f'Timeout to establish connection with {ip}:{port}')
     return ip, None
+
 
 def get_accessible_ssh_tunnels(host, port, print_info=False, print_error=False, only_best=False):
     host, port = str(host), int(port)
@@ -52,13 +54,13 @@ def get_accessible_ssh_tunnels(host, port, print_info=False, print_error=False, 
             if end_time is not None:
                 if print_info:
                     print(f'{ip} | {(end_time - start_time).total_seconds()}s')
-                    return ip
+                return ip
             else:
                 if print_error:
                     print(f'{ip} | timeout')
                 return None
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     accessible_ssh_tunnels = get_accessible_ssh_tunnels('0.tcp.ngrok.io', 19492, only_best=True)
     print(accessible_ssh_tunnels)
