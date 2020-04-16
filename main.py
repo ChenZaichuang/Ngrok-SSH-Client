@@ -1,5 +1,5 @@
 import json
-from ssh.connect import connect_ssh
+from connect import connect_ssh
 
 if __name__ == '__main__':
     with open('config.json') as f:
