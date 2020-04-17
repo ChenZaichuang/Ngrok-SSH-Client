@@ -16,6 +16,8 @@ def _get_latency_of_ssh_tunnel(ip, port, print_error=False):
     except gevent.timeout.Timeout:
         if print_error:
             print(f'Timeout to establish connection with {ip}:{port}')
+    except paramiko.ssh_exception.SSHException:
+        raise RuntimeError('SSH server is down, please check !!!')
     return ip, None
 
 
