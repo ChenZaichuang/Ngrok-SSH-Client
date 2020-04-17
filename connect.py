@@ -2,8 +2,8 @@ import re
 import socket
 from importlib import reload
 
-from .ip_evaluate import get_accessible_ssh_tunnels
-from .interactive import interactive_shell
+from ip_evaluate import get_accessible_ssh_tunnels
+from interactive import interactive_shell
 import paramiko
 
 def connect_ssh(host, port, username, password, log_file=None):

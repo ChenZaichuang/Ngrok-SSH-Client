@@ -1,6 +1,6 @@
 {
-  "host": "0.tcp.ngrok.io",
-  "port": "19492",
-  "username": "firefly",
-  "password": "firefly"
+  "host": "",
+  "port": "",
+  "username": "",
+  "password": ""
 }
