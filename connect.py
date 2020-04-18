@@ -12,6 +12,7 @@ def connect_ssh(host, port, username, password, log_file=None):
     else:
         ip = get_accessible_ssh_tunnels(host, port, only_best=True)
         assert ip is not None, f'Can not find accessible ip of {host}:{port}'
+    print(f'Start connecting to {ip}:{port}')
     # 记录日志
     reload(socket)
     if log_file is not None:

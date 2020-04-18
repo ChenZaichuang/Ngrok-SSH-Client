@@ -27,6 +27,9 @@ def get_accessible_ssh_tunnels(host, port, print_info=False, print_error=False, 
 
     ips = DNSResolver().get_ip_list_of_host(host)
 
+    if len(ips) == 0:
+        raise RuntimeError(f'Can not get any ip of {host}, make use no vpn started !!!')
+
     start_time = datetime.now()
 
     for ip in ips:
