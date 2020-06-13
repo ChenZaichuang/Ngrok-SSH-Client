@@ -1,3 +1,5 @@
+from gevent import monkey
+monkey.patch_all(thread=False)
 import json
 from connect import connect_ssh
 
